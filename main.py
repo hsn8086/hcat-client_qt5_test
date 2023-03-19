@@ -1,18 +1,21 @@
 from PyQt5 import QtWidgets, uic
 import requests
 
+cookies = None
+
 
 class LoginDialog(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi('login.ui', self)
 
-        self.loginButton.clicked.connect(self.handle_login)
+        self.pushButton_Login.clicked.connect(self.handle_login)
 
     def handle_login(self):
+        global cookies
         # 这里编写处理登录的代码
-        username = self.usernameLineEdit.text()
-        password = self.passwordLineEdit.text()
+        username = self.lineEdit_UserId.text()
+        password = self.lineEdit_Password.text()
         # ...
 
         # 发送请求
@@ -24,6 +27,7 @@ class LoginDialog(QtWidgets.QDialog):
             return
 
         if x.json().get('status') == 'ok':
+            cookies = x.cookies
             self.accept()
         else:
             QtWidgets.QMessageBox.warning(self, '错误', '用户名或密码错误')
@@ -33,9 +37,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('main.ui', self)
-
-        # 这里编写处理登录的代码
-        # ...
 
 
 if __name__ == '__main__':
