@@ -17,7 +17,9 @@ class LoginDialog(QtWidgets.QDialog):
         username = self.lineEdit_UserId.text()
         password = self.lineEdit_Password.text()
         # ...
-
+        self.pushButton_Login.setEnabled(False)
+        self.pushButton_Login.setText('Logining...')
+        self.repaint()
         # 发送请求
         try:
             x = requests.post('https://3455f9504d.goho.co/hcat-api/account/login',
@@ -31,6 +33,9 @@ class LoginDialog(QtWidgets.QDialog):
             self.accept()
         else:
             QtWidgets.QMessageBox.warning(self, '错误', '用户名或密码错误')
+        self.pushButton_Login.setEnabled(True)
+        self.pushButton_Login.setText('Login')
+        self.repaint()
 
 
 class MainWindow(QtWidgets.QMainWindow):
