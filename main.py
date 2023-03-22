@@ -13,29 +13,31 @@ class LoginDialog(QtWidgets.QDialog):
 
     def handle_login(self):
         global cookies
-        # 这里编写处理登录的代码
+
         username = self.lineEdit_UserId.text()
         password = self.lineEdit_Password.text()
-        # ...
+
         self.pushButton_Login.setEnabled(False)
         self.pushButton_Login.setText('Logining...')
         self.repaint()
-        # 发送请求
+
         try:
             x = requests.post('https://3455f9504d.goho.co/hcat-api/account/login',
                               data={'user_id': username, 'password': password})
+            if x.json().get('status') == 'ok':
+                cookies = x.cookies
+                self.accept()
+            else:
+                self.label_info.setText('User_id or password is wrong.')
+                self.label_info.setStyleSheet('color: red')
         except requests.exceptions.ConnectionError:
-            QtWidgets.QMessageBox.warning(self, '错误', '无法连接到服务器')
-            return
+            self.label_info.setText('Cannot connect to server.')
+            self.label_info.setStyleSheet('color: red')
 
-        if x.json().get('status') == 'ok':
-            cookies = x.cookies
-            self.accept()
-        else:
-            QtWidgets.QMessageBox.warning(self, '错误', '用户名或密码错误')
         self.pushButton_Login.setEnabled(True)
         self.pushButton_Login.setText('Login')
         self.repaint()
+        return
 
 
 class MainWindow(QtWidgets.QMainWindow):

@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>582</width>
     <height>300</height>
    </rect>
   </property>
@@ -31,9 +31,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-20</x>
      <y>0</y>
-     <width>200</width>
+     <width>220</width>
      <height>300</height>
     </rect>
    </property>
@@ -41,7 +41,8 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(0,0,0,0);</string>
+    <string notr="true">background-color: rgba(43, 45, 48, 255);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string/>
@@ -50,9 +51,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>180</x>
      <y>0</y>
-     <width>400</width>
+     <width>401</width>
      <height>300</height>
     </rect>
    </property>
@@ -215,6 +216,29 @@ QPushButton:pressed {
     <string>Login</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_info">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>250</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>lineEdit_UserId</zorder>
+  <zorder>label_3</zorder>
+  <zorder>lineEdit_Password</zorder>
+  <zorder>pushButton_Login</zorder>
+  <zorder>label_info</zorder>
  </widget>
  <resources>
   <include location="pic-login.qrc"/>
