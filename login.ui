@@ -87,7 +87,7 @@ border-radius: 10px;</string>
    </property>
    <property name="font">
     <font>
-     <family>Open Sans SemiBold</family>
+     <family>Open Sans Light</family>
      <pointsize>10</pointsize>
      <weight>75</weight>
      <italic>false</italic>
@@ -99,7 +99,7 @@ border-radius: 10px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
-border-bottom:2px solid rgba(0,0,0,50);
+border-bottom:2px solid rgba(128,128,128,50);
 background-color: rgba(0,0,0,0);</string>
    </property>
    <property name="inputMask">
@@ -152,7 +152,7 @@ background-color: rgba(0,0,0,0);</string>
    </property>
    <property name="font">
     <font>
-     <family>Open Sans SemiBold</family>
+     <family>Open Sans Light</family>
      <weight>75</weight>
      <italic>false</italic>
      <bold>true</bold>
@@ -163,7 +163,7 @@ background-color: rgba(0,0,0,0);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
-border-bottom:2px solid rgba(0,0,0,50);
+border-bottom:2px solid rgba(128,128,128,50);
 background-color: rgba(0,0,0,0);</string>
    </property>
    <property name="inputMask">
