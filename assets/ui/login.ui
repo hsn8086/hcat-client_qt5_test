@@ -99,6 +99,7 @@ border-radius: 10px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
+color: rgb(128, 128, 128);
 border-bottom:2px solid rgba(128,128,128,50);
 background-color: rgba(0,0,0,0);</string>
    </property>
@@ -134,6 +135,9 @@ background-color: rgba(0,0,0,0);</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
     <string>Login to HCAT</string>
    </property>
@@ -162,7 +166,8 @@ background-color: rgba(0,0,0,0);</string>
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">border: none;
+    <string notr="true">color: rgb(128, 128, 128);
+border: none;
 border-bottom:2px solid rgba(128,128,128,50);
 background-color: rgba(0,0,0,0);</string>
    </property>
